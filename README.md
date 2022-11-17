@@ -4,7 +4,7 @@
 ![Screenshot (34)](https://user-images.githubusercontent.com/112375327/202412487-3663da11-bd56-413c-8858-457185a7a626.png)
 
 # Skill / Job Recommender Application
-![image](https://user-images.githubusercontent.com/112375327/202413224-d8baf9f6-437c-4668-817e-e8e8136007bc.png)
+[![image](https://user-images.githubusercontent.com/112375327/202413224-d8baf9f6-437c-4668-817e-e8e8136007bc.png)](https://r7q6w9z6.rocketcdn.me/career/wp-content/uploads/2021/01/bh-advisor-dribbble-1.gif)
 
 
 # Project Description:
