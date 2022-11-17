@@ -7,7 +7,7 @@
 
 # Skill / Job Recommender Application
 
-![4236d00b6df31c5c1dab3566fa61ff3c](https://user-images.githubusercontent.com/112375327/202515759-c240fcf8-037e-4a21-88bf-a595c5aa8ab7.gif)
+![bh-advisor-dribbble-1](https://user-images.githubusercontent.com/112375327/202516817-102633b8-1bdc-4a4a-abd8-3cffe72116a6.gif)
 
 
 # Project Description:
