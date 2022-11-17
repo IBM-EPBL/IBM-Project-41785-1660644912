@@ -4,7 +4,7 @@
 ![Screenshot (34)](https://user-images.githubusercontent.com/112375327/202412487-3663da11-bd56-413c-8858-457185a7a626.png)
 
 # Skill / Job Recommender Application
-![image](https://user-images.githubusercontent.com/112375327/202410507-42447dcb-ec77-4e48-9731-629e3bb81088.png)
+![image](https://user-images.githubusercontent.com/112375327/202413224-d8baf9f6-437c-4668-817e-e8e8136007bc.png)
 
 
 # Project Description:
