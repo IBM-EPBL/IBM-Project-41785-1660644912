@@ -1,0 +1,159 @@
+let baseUrl;
+
+const metas = document.getElementsByTagName("meta");
+for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute("name") === 'apiUrl') {
+        baseUrl = metas[i].getAttribute("content");
+    };
+};
+
+const locationService = async (text) => {
+    const results = await fetch(`${baseUrl}search/cities`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "x-calling-app": "jobcomdev"
+        },
+        body: JSON.stringify({
+            text
+        }),
+    });
+    const locations = await results.json();
+    return Array.from(new Set(locations.map(location => `${location.city}, ${location.state}`)));
+};
+
+const titleService = async (text) => {
+    const results = await fetch(`${baseUrl}search/titles`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "x-calling-app": "jobcomdev"
+        },
+        body: JSON.stringify({
+            text
+        }),
+    });
+    const titles = await results.json();
+    return Array.from(new Set(titles.map((title) => title.value)));
+};
+
+//capitalize roles
+const capitalize = (array) => {
+    const lowerCase = array.map(role => role.toLowerCase());
+    return lowerCase.map(text => text.replace(/\b\w/g, function(m) {
+        return m.toUpperCase();
+    }));
+}
+
+const rolesInput = document.getElementById("keywords");
+const locationsInput = document.getElementById("locations");
+const honeyPot = document.getElementById("honeyPot");
+const submitButton = document.getElementsByClassName("header-form-submit")[0];
+const formWrapper = document.getElementsByClassName("search_form")[0];
+let timeOut;
+
+const selectRole = (e) => {
+    const role = e.target.innerText;
+    rolesInput.value = role;
+};
+
+const selectLocation = (e) => {
+    const role = e.target.innerText;
+    locationsInput.value = role;
+};
+
+const searchRoles = async () => {
+    if (honeyPot.value) return;
+    const rolesInputWrapper = formWrapper.children[0].children[1];
+    const previousUl = rolesInputWrapper.children[2];
+    if (timeOut) {
+        await clearTimeout(timeOut);
+        timeOut = null;
+    };
+    if (!rolesInput.value && previousUl) {
+        rolesInputWrapper.removeChild(previousUl);
+        return;
+    };
+    timeOut = setTimeout(async () => {
+        try {
+            const result = await titleService(rolesInput.value);
+            const capitalizedRoles = capitalize(result);
+            if (previousUl) {
+                rolesInputWrapper.removeChild(previousUl);
+            };
+            if (result.length === 0) return;
+            const ul = document.createElement("ul");
+            ul.setAttribute("class", "autocomplete-options");
+            rolesInputWrapper.appendChild(ul);
+            for (let i = 0; i < capitalizedRoles.length; i++) {
+                const li = document.createElement("li");
+                ul.appendChild(li);
+                const button = document.createElement('button');
+                button.setAttribute("class", "select-role-btn");
+                button.setAttribute("type", "button");
+                button.addEventListener("mousedown", selectRole);
+                const text = document.createTextNode(capitalizedRoles[i]);
+                button.appendChild(text);
+                li.appendChild(button);
+            };
+        } catch (err) {
+            console.log(err);
+        }
+    }, 300);
+    return;
+};
+rolesInput.addEventListener("input", searchRoles);
+
+const searchLocations = async () => {
+    if (honeyPot.value) return;
+    const locationsInputWrapper = formWrapper.children[1].children[1];
+    const previousUl = locationsInputWrapper.children[2];
+    if (timeOut) {
+        await clearTimeout(timeOut);
+        timeOut = null;
+    };
+    if (!locationsInput.value && previousUl) {
+        locationsInputWrapper.removeChild(previousUl);
+        return;
+    };
+    timeOut = setTimeout(async () => {
+        try {
+            const result = await locationService(locationsInput.value);
+            if (previousUl) {
+                locationsInputWrapper.removeChild(previousUl);
+            };
+            if (result.length === 0) return;
+            const ul = document.createElement("ul");
+            ul.setAttribute("class", "autocomplete-options");
+            for (let i = 0; i < result.length; i++) {
+                const li = document.createElement("li");
+                const button = document.createElement('button');
+                button.setAttribute("class", "select-location-btn");
+                button.setAttribute("type", "button");
+                button.addEventListener("mousedown", selectLocation);
+                const text = document.createTextNode(result[i]);
+                button.appendChild(text);
+                li.appendChild(button);
+                ul.appendChild(li);
+            };
+            locationsInputWrapper.appendChild(ul);
+            return;
+        } catch (err) {
+            console.log(err);
+        }
+    }, 300)
+    return;
+};
+locationsInput.addEventListener("input", searchLocations);
+
+const submit = (e) => {
+    e.preventDefault();
+    window.location.href =
+        origin +
+        "/jobs/?role=" +
+        rolesInput.value +
+        "&location=" +
+        locationsInput.value;
+};
+
+submitButton.addEventListener("click", submit);
