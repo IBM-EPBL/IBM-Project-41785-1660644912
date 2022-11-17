@@ -1,4 +1,5 @@
-# IBM-Project-41785-1660644912
+# IBM-Project-41785-1660644912       ![IBM_logo_in (2)](https://user-images.githubusercontent.com/112375327/202514253-9604361f-d20c-408b-bde6-8f84c550361f.jpg)
+
 
 
 ![Screenshot (34)](https://user-images.githubusercontent.com/112375327/202412487-3663da11-bd56-413c-8858-457185a7a626.png)
@@ -15,7 +16,6 @@ To develop an end-to-end web application capable of displaying the current job o
 
 
 
-![bh-advisor-dribbble-1](https://user-images.githubusercontent.com/112375327/202513354-5a0b69c0-c5de-4f36-92b3-4911f0110c90.gif)
 
 
 
