@@ -1,15 +1,8 @@
 # IBM-Project-41785-1660644912
 # Skill / Job Recommender Application
 
-TEAM LEADER - PRAKALYA B M
+![Screenshot (34)](https://user-images.githubusercontent.com/112375327/202412487-3663da11-bd56-413c-8858-457185a7a626.png)
 
-TEAM MEMBER1	- NALINA M
-
-TEAM MEMBER2	- LAVANYA S
-
-TEAM MEMBER3	- KEERTHIKA E
-
-TEAM MEMBER4	- JEEVITHA S
 
 ![image](https://user-images.githubusercontent.com/112375327/202410507-42447dcb-ec77-4e48-9731-629e3bb81088.png)
 
