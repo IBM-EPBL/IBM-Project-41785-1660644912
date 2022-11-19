@@ -15,10 +15,14 @@ To develop an end-to-end web application capable of displaying the current job o
 
 PROJECT DESIGN AND PLANNING: [CLICK HERE](https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Prakalya/Project%20Design%20and%20Planning)
 # ASSIGNMENTS
-TEAM LEAD : (https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Prakalya/Assignments)
+TEAM LEAD     : [CLICK HERE](https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Prakalya/Assignments)
+
 TEAM MEMBER 1 :[CLICK HERE](https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Keerthika)
+
 TEAM MEMBER 2 :[CLICK HERE](https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Nalina/Assignments)
+
 TEAM MEMBER 3 :[CLICK HERE](https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Lavanya/Assignments)
+
 TEAM MEMBER 4 :[CLICK HERE](https://github.com/IBM-EPBL/IBM-Project-41785-1660644912/tree/main/Jeevitha/Assignments)
 
 
